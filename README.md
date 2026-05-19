@@ -17,8 +17,7 @@ This repository contains my solutions to Data Structures and Algorithms problems
 
 ## Languages Used
 - Java
-- C++
-- Python
+
 
 ## Goal
 Improving problem-solving skills and strengthening DSA concepts through consistent practice.
