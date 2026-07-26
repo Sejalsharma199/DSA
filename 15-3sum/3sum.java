@@ -130,3 +130,16 @@ So although both i and l move to the right, their purpose is different:
 i is deciding whether to start processing a value.
 l is already done processing and is skipping duplicates before moving forward.
 That difference is why the comparisons are different. */
+
+/* 
+Why don't we close the if immediately after res.add()?
+Because everything below should happen only when sum == 0.
+Think of the if block like this:
+"If I found a valid triplet, what all should I do?"
+The answer is:
+✅ Add the triplet.
+✅ Skip duplicate values of l.
+✅ Skip duplicate values of r.
+✅ Move both pointers.
+All four steps belong to the same situation (sum == 0), so they are kept inside the same {} block.
+    */
