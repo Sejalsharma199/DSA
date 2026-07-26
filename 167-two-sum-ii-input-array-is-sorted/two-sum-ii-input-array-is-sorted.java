@@ -15,7 +15,8 @@ class Solution {
                 j--;
             }
         }
-        return new int[]{-1,-1};
+        return new int[]{-1,-1}; //what if no pair exist you are returning res as[0,0] which was misleading and look like a valid answer so return [-1,-1]
+    }
     }
     
 }
