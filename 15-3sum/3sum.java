@@ -143,3 +143,111 @@ The answer is:
 ✅ Move both pointers.
 All four steps belong to the same situation (sum == 0), so they are kept inside the same {} block.
     */
+
+/*
+Suppose after sorting we have:
+nums = [-2, 0, 0, 0, 2, 2]
+
+You fixed:
+
+i = -2
+
+So
+
+l = 0
+r = 2
+
+Current pointers:
+
+-2   0   0   0   2   2
+ ↑   ↑           ↑
+ i   l           r
+
+Sum:
+
+-2 + 0 + 2 = 0
+
+You found one triplet:
+
+[-2, 0, 2]
+
+You add it to the answer.
+
+Now what happens if you DON'T skip duplicates?
+
+Suppose you only do:
+
+l++;
+r--;
+
+Now:
+
+-2   0   0   0   2   2
+ ↑       ↑   ↑
+ i       l   r
+
+Now:
+
+-2 + 0 + 2 = 0
+
+Again!
+
+You will again add
+
+[-2,0,2]
+
+Now your answer becomes
+
+[
+ [-2,0,2],
+ [-2,0,2]
+]
+
+Duplicate! ❌
+
+Again
+
+l++;
+r--;
+
+Now
+
+-2   0   0   0   2   2
+ ↑           ↑
+ i           l
+         r
+
+Again
+
+-2 + 0 + 2 = 0
+
+Again duplicate.
+
+That's why we skip duplicates.
+
+After finding one valid triplet:
+
+while(l < r && nums[l] == nums[l + 1]) {
+    l++;
+}
+
+means
+
+Skip all repeated values on the left.
+
+Similarly
+
+while(l < r && nums[r] == nums[r - 1]) {
+    r--;
+}
+
+means
+
+Skip all repeated values on the right.
+
+Then finally
+
+l++;
+r--;
+
+moves to the next different numbers. */
