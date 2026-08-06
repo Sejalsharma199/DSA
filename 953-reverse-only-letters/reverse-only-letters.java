@@ -24,3 +24,7 @@ class Solution {
         return new String(c);
     }
 }
+
+/* https://chatgpt.com/s/t_6a746d1c313c819182b158fcdb9ae1fd
+https://chatgpt.com/s/t_6a746d7762288191977a81b8a8cf564b
+https://chatgpt.com/s/t_6a746d946ca081919e878b8c5e0375e2 */
