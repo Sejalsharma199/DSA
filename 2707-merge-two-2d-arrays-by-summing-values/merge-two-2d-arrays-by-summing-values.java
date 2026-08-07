@@ -52,3 +52,46 @@ class Solution {
         return ans;
     }
 }
+
+/* 
+class Solution {
+    public int[][] mergeArrays(int[][] nums1, int[][] nums2) {
+        List<int[]> List = new ArrayList<>(); //since list will be like [1,2]
+        int i = 0 , j = 0;
+        while(i<nums1.length && j<nums2.length) {
+            // comparing id's
+            if(nums1[i][0] == nums2[j][0]) {
+                int id = nums1[i][0];
+                int value = nums1[i][1]+ nums2[j][1];
+                // now add thi one row to the list
+                List.add(new int[]{id , value});
+                i++;
+                j++;
+            }
+            //since it is arranged in ascending order (it will never find it in nums2)
+            else if(nums1[i][0]< nums2[j][0]) {
+                List.add(nums1[i]);
+                i++;
+            }
+            else {
+                List.add(nums2[j]);
+                j++;
+            }
+        }
+        //if nums1 still has rows
+        while(i<nums1.length) {
+            List.add(nums1[i]);
+            i++;
+        }
+        //if nums2 still has rows
+        while(j<nums2.length) {
+            List.add(nums2[j]);
+            j++;
+        }
+        int[][] ans = new int[List.size()][2];
+        for(int k = 0 ; k<List.size() ; k++) {
+            ans[k] = List.get(k);
+        }
+        return ans;
+    }
+} */
